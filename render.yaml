@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: code-editor-backend
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn backend.wsgi:application"
+    envVars:
+      - key: DJANGO_ALLOWED_HOSTS
+        value: "*"
+      - key: DJANGO_SETTINGS_MODULE
+        value: backend.settings
+      - key: PYTHON_VERSION
+        value: 3.10.13
+      - key: SECRET_KEY
+        value: g692*!7*ws3f-h_y60+gzc4&8=*e@tul%r5%u&)%q2^i)5vww@
